@@ -1,6 +1,5 @@
 import datetime
 import time
-from threading import Thread
 
 
 class BuzzerDummy:
@@ -19,6 +18,3 @@ class BuzzerDummy:
             self.power_pin))
         print("____________________________________________________________________")
 
-    def trigger_buzzer(self):
-        t = Thread(target=self.toggle())
-        t.start()

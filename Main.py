@@ -2,17 +2,6 @@ import schedule
 import time
 import BuzzerDummy
 import json
-from threading import Thread
-
-
-def job(buzzer):
-    buzzer.toggle()
-
-
-def run_threaded(job_func):
-    job_thread = Thread(target=job_func)
-    job_thread.start()
-
 
 # Read in the config file
 with open('config.json', 'r') as f:
@@ -26,7 +15,7 @@ for task in config['tasks']:
 
 # Set up the schedule
 for bt in buzzers:
-    schedule.every().day.at(bt.time).do(run_threaded, job(bt))
+    schedule.every().day.at(bt.time).do(bt.toggle)
 
 # Begin Schedule Loop
 while True:
