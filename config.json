@@ -3,16 +3,16 @@
     "tasks": [
       {
         "name": "First Lunch",
-        "time": "12:47",
+        "time": "15:05",
         "buzzer_duration_secs": 5
       },{
         "name": "First Lunch End",
-        "time": "12:48",
+        "time": "15:06",
         "buzzer_duration_secs": 2
       },
       {
         "name": "First Shift Over",
-        "time": "12:50",
+        "time": "15:07",
         "buzzer_duration_secs": 2
       }
     ]
