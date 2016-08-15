@@ -1,0 +1,19 @@
+{
+    "power_pin": "23",
+    "tasks": [
+      {
+        "name": "First Lunch",
+        "time": "12:00",
+        "buzzer_duration_secs": 2
+      },{
+        "name": "First Lunch End",
+        "time": "12:05",
+        "buzzer_duration_secs": 2
+      },
+      {
+        "name": "First Shift Over",
+        "time": "12:10",
+        "buzzer_duration_secs": 2
+      }
+    ]
+}
