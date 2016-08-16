@@ -19,7 +19,14 @@
   "special": [
       {
         "name": "Moment of Silence",
-        "run_date": "2016-08-16 10:26:00",
+        "start_buzzer": "2016-08-16 10:27:00",
+        "end_buzzer": "2016-08-16 10:26:00",
+        "buzzer_duration_secs": 2
+      },
+      {
+        "name": "Special Holiday Break",
+        "start_buzzer": "2016-08-16 14:34:00",
+        "end_buzzer": "2016-08-16 14:36:00",
         "buzzer_duration_secs": 2
       }
     ]

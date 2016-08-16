@@ -29,9 +29,11 @@ logging.info("Daily scheduled jobs loaded into memory! (Total: %s)", str(len(buz
 special_buzzers = []
 for job in config['special']:
     b = SpecialBuzzer.SpecialBuzzer(name=job['name'],
-                                    run_date=job['run_date'],
+                                    start_buzzer=job['start_buzzer'],
                                     duration=job['buzzer_duration_secs'],
                                     pwr_pin=config["power_pin"])
+    if job['end_buzzer'] is not '0':
+        b.end_buzzer = job['end_buzzer']
     special_buzzers.append(b)
 logging.info("Special scheduled jobs loaded into memory! (Total: %s)", str(len(special_buzzers)))
 
@@ -41,14 +43,16 @@ for bt in buzzers:
     run_time = bt.time.split(":")
     scheduler.add_job(bt.toggle,
                       'cron',
-                      name=bt.name,
+                      name=bt.name.replace(" ", "-"),
                       day_of_week='mon-sun',
                       hour=int(run_time[0]),
                       minute=int(run_time[1]))
 
 # Set up special occasion schedule
 for so in special_buzzers:
-    scheduler.add_job(so.toggle, 'date', id=bt.name.replace(" ", "-"), name=bt.name, run_date=so.run_date)
+    scheduler.add_job(so.toggle, 'date',  name=so.name, run_date=so.start_buzzer)
+    if so.end_buzzer is not '0':
+        scheduler.add_job(so.toggle, 'date',  name=so.name+'-end', run_date=so.end_buzzer)
 
 # Begin Schedule
 try:

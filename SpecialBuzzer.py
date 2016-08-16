@@ -5,11 +5,12 @@ import sys
 
 
 class SpecialBuzzer:
-    def __init__(self, run_date='2015-12-31 06:30:00', name='Untitled', duration=1, pwr_pin=23):
+    def __init__(self, start_buzzer='2015-12-31 06:30:00', end_buzzer='0', name='Untitled', duration=1, pwr_pin=23):
         self.name = name
         self.duration = duration
         self.power_pin = pwr_pin
-        self.run_date = run_date
+        self.start_buzzer = start_buzzer
+        self.end_buzzer = end_buzzer
 
     def toggle(self):
         try:
