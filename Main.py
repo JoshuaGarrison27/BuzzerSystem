@@ -1,36 +1,55 @@
-import schedule
-import time
-import BuzzerDummy
+from apscheduler.schedulers.blocking import BlockingScheduler
+import NormalBuzzer
+import SpecialBuzzer
 import json
 import logging
 
 # Set up logger
 log_format = '[%(levelname)s] - %(message)s'
-logging.basicConfig(filename='example.log', format=log_format, level=logging.DEBUG)
+logging.basicConfig(filename='Activity.log', format=log_format, level=logging.DEBUG)
+
+logging.info("=========== Gastonia Buzzer System ===========")
 
 # Read in the config file
 with open('config.json', 'r') as f:
     config = json.load(f)
 logging.info("config.json file loaded!")
 
-# Load in Buzzer Tasks from config
 buzzers = []
-for task in config['tasks']:
-    b = BuzzerDummy.BuzzerDummy(name=task['name'],
-                                time=task['time'],
-                                duration=task['buzzer_duration_secs'],
-                                pwr_pin=config["power_pin"])
+for job in config['daily']:
+    b = NormalBuzzer.NormalBuzzer(name=job['name'],
+                                  time=job['time'],
+                                  duration=job['buzzer_duration_secs'],
+                                  pwr_pin=config["power_pin"])
     buzzers.append(b)
-logging.info("Tasks loaded into memory! (Total: %s)", str(len(buzzers)))
+logging.info("Daily scheduled jobs loaded into memory! (Total: %s)", str(len(buzzers)))
 
-# Set up the schedule
+special_buzzers = []
+for job in config['special']:
+    b = SpecialBuzzer.SpecialBuzzer(name=job['name'],
+                                    run_date=job['run_date'],
+                                    duration=job['buzzer_duration_secs'],
+                                    pwr_pin=config["power_pin"])
+    special_buzzers.append(b)
+logging.info("Special scheduled jobs loaded into memory! (Total: %s)", str(len(special_buzzers)))
+
+scheduler = BlockingScheduler()
 for bt in buzzers:
-    schedule.every().day.at(bt.time).do(bt.toggle)
-logging.info("Buzzer tasks loaded into scheduler!")
+    run_time = bt.time.split(":")
+    scheduler.add_job(bt.toggle,
+                      'cron',
+                      name=bt.name,
+                      day_of_week='mon-sun',
+                      hour=int(run_time[0]),
+                      minute=int(run_time[1]))
 
-logging.info("Starting schedule listener...")
-logging.info("Next scheduled task is at %s", schedule.next_run())
-# Begin Schedule Loop
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# Set up special occasion schedule
+for so in special_buzzers:
+    scheduler.add_job(so.toggle, 'date', id=bt.name.replace(" ", "-"), name=bt.name, run_date=so.run_date)
+
+# Begin Schedule
+try:
+    scheduler.start()
+except (KeyboardInterrupt, SystemExit):
+    logging.debug("Keyboard Interruption or System Exit!")
+    pass

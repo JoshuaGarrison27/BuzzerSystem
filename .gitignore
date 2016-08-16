@@ -4,6 +4,7 @@
 # User-specific stuff:
 .idea/*
 __pycache__/*
+*.log
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids

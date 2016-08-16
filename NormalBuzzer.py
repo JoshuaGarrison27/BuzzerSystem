@@ -4,12 +4,12 @@ import logging
 import sys
 
 
-class BuzzerDummy:
+class NormalBuzzer:
     def __init__(self, time='09:00', name='Untitled', duration=1, pwr_pin=23):
         self.name = name
         self.duration = duration
-        self.time = time
         self.power_pin = pwr_pin
+        self.time = time
 
     def toggle(self):
         try:

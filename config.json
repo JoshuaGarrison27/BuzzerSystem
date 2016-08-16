@@ -1,18 +1,25 @@
 {
-    "power_pin": "23",
-    "tasks": [
+  "power_pin": "23",
+  "daily": [
+    {
+      "name": "First Lunch",
+      "time": "10:24",
+      "buzzer_duration_secs": 2
+    },{
+      "name": "First Lunch End",
+      "time": "10:25",
+      "buzzer_duration_secs": 2
+    },
+    {
+      "name": "First Shift Over",
+      "time": "10:27",
+      "buzzer_duration_secs": 2
+    }
+  ],
+  "special": [
       {
-        "name": "First Lunch",
-        "time": "15:05",
-        "buzzer_duration_secs": 5
-      },{
-        "name": "First Lunch End",
-        "time": "15:06",
-        "buzzer_duration_secs": 2
-      },
-      {
-        "name": "First Shift Over",
-        "time": "15:07",
+        "name": "Moment of Silence",
+        "run_date": "2016-08-16 10:26:00",
         "buzzer_duration_secs": 2
       }
     ]
