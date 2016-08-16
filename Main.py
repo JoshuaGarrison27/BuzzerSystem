@@ -15,6 +15,7 @@ with open('config.json', 'r') as f:
     config = json.load(f)
 logging.info("config.json file loaded!")
 
+# Load in daily buzzer tasks from config
 buzzers = []
 for job in config['daily']:
     b = NormalBuzzer.NormalBuzzer(name=job['name'],
@@ -24,6 +25,7 @@ for job in config['daily']:
     buzzers.append(b)
 logging.info("Daily scheduled jobs loaded into memory! (Total: %s)", str(len(buzzers)))
 
+# Load in special buzzer tasks from config
 special_buzzers = []
 for job in config['special']:
     b = SpecialBuzzer.SpecialBuzzer(name=job['name'],
@@ -33,6 +35,7 @@ for job in config['special']:
     special_buzzers.append(b)
 logging.info("Special scheduled jobs loaded into memory! (Total: %s)", str(len(special_buzzers)))
 
+# Set up the daily schedule
 scheduler = BlockingScheduler()
 for bt in buzzers:
     run_time = bt.time.split(":")
