@@ -4,12 +4,14 @@ import logging
 import sys
 
 
-class NormalBuzzer:
-    def __init__(self, time='09:00', name='Untitled', duration=1, pwr_pin=23):
+class BuzzerEvent:
+    power_pin = 23
+
+    def __init__(self, start='2015-12-31 06:30:00', end='0', name='Untitled', duration=1):
         self.name = name
         self.duration = duration
-        self.power_pin = pwr_pin
-        self.time = time
+        self.start = start
+        self.end = end
 
     def toggle(self):
         try:

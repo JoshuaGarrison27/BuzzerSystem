@@ -1,33 +1,32 @@
 {
-  "power_pin": "23",
   "daily": [
     {
       "name": "First Lunch",
-      "time": "10:24",
-      "buzzer_duration_secs": 2
+      "time": "20:30",
+      "duration_secs": 2
     },{
       "name": "First Lunch End",
-      "time": "10:25",
-      "buzzer_duration_secs": 2
+      "time": "20:36",
+      "duration_secs": 2
     },
     {
       "name": "First Shift Over",
-      "time": "10:27",
-      "buzzer_duration_secs": 2
+      "time": "20:37",
+      "duration_secs": 2
     }
   ],
   "special": [
       {
         "name": "Moment of Silence",
-        "start_buzzer": "2016-08-16 10:27:00",
-        "end_buzzer": "2016-08-16 10:26:00",
-        "buzzer_duration_secs": 2
+        "start": "2016-08-16 20:34:00",
+        "end": "2016-08-16 20:35:00",
+        "duration_secs": 2
       },
       {
         "name": "Special Holiday Break",
-        "start_buzzer": "2016-08-16 14:34:00",
-        "end_buzzer": "2016-08-16 14:36:00",
-        "buzzer_duration_secs": 2
+        "start": "2016-08-16 14:34:00",
+        "end": "2016-08-16 14:36:00",
+        "duration_secs": 2
       }
     ]
 }
