@@ -2,11 +2,10 @@ import datetime
 import time
 import logging
 import sys
+import RPi.GPIO as io
 
 
 class BuzzerEvent:
-    power_pin = 23
-
     def __init__(self, start='2015-12-31 06:30:00', end='0', name='Untitled', duration=1):
         self.name = name
         self.duration = duration
@@ -15,10 +14,15 @@ class BuzzerEvent:
 
     def toggle(self):
         try:
-            logging.info("Buzzer - \"" + self.name + "\" - ON - " + str(datetime.datetime.now()) + " - Power pin " +
-                         str(self.power_pin) + " (Duration: " + str(self.duration) + " seconds)")
+            # Turn On Buzzer
+            io.output(self.power_pin, True)
+            logging.info("Buzzer - \"" + self.name + "\" - ON - " + str(datetime.datetime.now()) + " (Duration: " + str(self.duration) + " seconds)")
+
+            # Wait for duration of the buzzer requested
             time.sleep(self.duration)
-            logging.info("Buzzer - \"" + self.name + "\" - OFF - " + str(datetime.datetime.now()) + " - Power pin " +
-                         str(self.power_pin))
+
+            # Turn Off Buzzer
+            io.output(self.power_pin, False)
+            logging.info("Buzzer - \"" + self.name + "\" - OFF - " + str(datetime.datetime.now()))
         except:
             logging.critical("Unexpected error:", sys.exc_info()[0])

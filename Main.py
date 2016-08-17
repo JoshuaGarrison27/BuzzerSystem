@@ -3,12 +3,28 @@ import BuzzerEvent
 import json
 import logging
 import datetime
+import sys
+import RPi.GPIO as io
 
 # Set up logger
-log_format = '[%(levelname)s] - %(message)s'
-logging.basicConfig(filename='Activity.log', format=log_format, level=logging.DEBUG)
+log_format = '[%(levelname)s] [%(asctime)s] - %(message)s'
+logging.basicConfig(filename='Activity.log', level=logging.DEBUG)
+logging.Formatter(log_format, datefmt='%Y-%m-%d %H:%M:%S')
+
+# Set up system print out for end user
+root = logging.getLogger()
+ch = logging.StreamHandler(sys.stdout)
+ch.setLevel(logging.INFO)
+formatter = logging.Formatter(log_format, datefmt='%Y-%m-%d %H:%M:%S')
+ch.setFormatter(formatter)
+root.addHandler(ch)
 
 logging.info("=========== Gastonia Buzzer System ===========")
+
+# Set up RPi GPIO
+# io.BCM says use the BCM GPIO numbering system for pins.
+io.setmode(io.BCM)
+io.setup(23, io.OUT)
 
 # Read in the config file
 with open('config.json', 'r') as f:
@@ -18,7 +34,7 @@ logging.info("config.json file loaded!")
 # Load in daily buzzer tasks from config
 buzzers = []
 for job in config['daily']:
-    start_time = datetime.datetime.strptime(job['time'], "%H:%M")
+    start_time = datetime.datetime.strptime(job['start'], "%Y-%m-%d %H:%M:%S")
     b = BuzzerEvent.BuzzerEvent(name=job['name'],
                                 start=str(start_time.hour) + ":" + str(start_time.minute),
                                 duration=job['duration_secs'])
@@ -55,7 +71,11 @@ for so in special_buzzers:
 
 # Start Schedule
 try:
+    print("Config Complete!")
+    print("Starting Scheduler...")
     scheduler.start()
 except (KeyboardInterrupt, SystemExit):
-    logging.debug("Keyboard Interruption or System Exit!")
-    pass
+    logging.debug("Keyboard Interruption or System Exit! Program halting...")
+    print("Keyboard Interruption or System Exit! Program halting...")
+finally:
+    io.cleanup()
