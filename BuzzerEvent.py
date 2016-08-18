@@ -15,14 +15,14 @@ class BuzzerEvent:
     def toggle(self):
         try:
             # Turn On Buzzer
-            io.output(self.power_pin, True)
+            io.output(23, True)
             logging.info("Buzzer - \"" + self.name + "\" - ON - " + str(datetime.datetime.now()) + " (Duration: " + str(self.duration) + " seconds)")
 
             # Wait for duration of the buzzer requested
             time.sleep(self.duration)
 
             # Turn Off Buzzer
-            io.output(self.power_pin, False)
+            io.output(23, False)
             logging.info("Buzzer - \"" + self.name + "\" - OFF - " + str(datetime.datetime.now()))
         except:
             logging.critical("Unexpected error:", sys.exc_info()[0])
