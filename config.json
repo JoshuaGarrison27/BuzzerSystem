@@ -1,307 +1,287 @@
 {
   "daily": [
     {
-      "name": "1",
+      "name": "Start of A group first break",
       "start": "9999-12-31 00:30:00",
       "duration_secs": 3
     },
     {
-      "name": "2",
+      "name": "Start of B group first break",
       "start": "9999-12-31 00:40:00",
       "duration_secs": 3
     },
     {
-      "name": "3",
+      "name": "End of A group first break",
       "start": "9999-12-31 00:45:00",
       "duration_secs": 3
     },
+		{
+	  "name": "Start of C group first break",
+      "start": "9999-12-31 00:50:00",
+      "duration_secs": 3
+	},
+	{
+	  "name": "End of B group first break",
+      "start": "9999-12-31 00:55:00",
+      "duration_secs": 3
+	},
     {
-      "name": "4",
+      "name": "Start of D group first break",
       "start": "9999-12-31 01:00:00",
       "duration_secs": 3
     },
     {
-      "name": "5",
+      "name": "End of C group first break",
       "start": "9999-12-31 01:05:00",
       "duration_secs": 3
     },
     {
-      "name": "6",
+      "name": "End of D group first break",
       "start": "9999-12-31 01:15:00",
       "duration_secs": 3
     },
     {
-      "name": "7",
-      "start": "9999-12-31 01:20:00",
-      "duration_secs": 3
-    },
-    {
-      "name": "8",
-      "start": "9999-12-31 01:35:00",
-      "duration_secs": 3
-    },
-    {
-      "name": "9",
+      "name": "Start of A group second break",
       "start": "9999-12-31 03:00:00",
       "duration_secs": 3
     },
     {
-      "name": "10",
-      "start": "9999-12-31 03:10:00",
-      "duration_secs": 3
-    },
-    {
-      "name": "11",
+      "name": "Start of B group second break",
       "start": "9999-12-31 03:15:00",
       "duration_secs": 3
     },
     {
-      "name": "12",
+      "name": "End of A group second break",
       "start": "9999-12-31 03:20:00",
       "duration_secs": 3
     },
     {
-      "name": "13",
-      "start": "9999-12-31 03:25:00",
-      "duration_secs": 3
-    },
-    {
-      "name": "14",
+      "name": "Start of C group second break",
       "start": "9999-12-31 03:30:00",
       "duration_secs": 3
     },
     {
-      "name": "15",
+      "name": "End of B group second break",
       "start": "9999-12-31 03:35:00",
       "duration_secs": 3
     },
     {
-      "name": "16",
+      "name": "Start of D group second break",
       "start": "9999-12-31 03:45:00",
       "duration_secs": 3
     },
     {
-      "name": "17",
+      "name": "End of C group second break",
+      "start": "9999-12-31 03:50:00",
+      "duration_secs": 3
+    },
+    {
+      "name": "End of D group second break",
+      "start": "9999-12-31 04:05:00",
+      "duration_secs": 3
+    },
+    {
+      "name": "Ten minute end of third shift warning",
       "start": "9999-12-31 06:20:00",
       "duration_secs": 3
     },
     {
-      "name": "18",
+      "name": "Start of First Shift",
       "start": "9999-12-31 06:30:00",
       "duration_secs": 3
     },
     {
-      "name": "19",
+      "name": "End of First Shift Huddle Meeting",
       "start": "9999-12-31 06:40:00",
       "duration_secs": 3
     },
     {
-      "name": "20",
+      "name": "Start of A group first break",
       "start": "9999-12-31 08:30:00",
       "duration_secs": 3
     },
     {
-      "name": "21",
+      "name": "Start of B group first break",
       "start": "9999-12-31 08:40:00",
       "duration_secs": 3
     },
     {
-      "name": "22",
+      "name": "End of A group first break",
       "start": "9999-12-31 08:45:00",
       "duration_secs": 3
     },
     {
-      "name": "23",
+      "name": "Start of C group first break",
       "start": "9999-12-31 08:50:00",
       "duration_secs": 3
     },
     {
-      "name": "24",
+      "name": "End of B group first break",
       "start": "9999-12-31 08:55:00",
       "duration_secs": 3
     },
     {
-      "name": "25",
+      "name": "Start of D group first break",
       "start": "9999-12-31 09:00:00",
       "duration_secs": 3
     },
     {
-      "name": "26",
+      "name": "End of C group first break",
       "start": "9999-12-31 09:05:00",
       "duration_secs": 3
     },
     {
-      "name": "27",
-      "start": "9999-12-31 09:10:00",
-      "duration_secs": 3
-    },
-    {
-      "name": "28",
+      "name": "End of D group first break",
       "start": "9999-12-31 09:15:00",
       "duration_secs": 3
     },
     {
-      "name": "29",
+      "name": "Start of A group second break",
       "start": "9999-12-31 11:00:00",
       "duration_secs": 3
     },
     {
-      "name": "30",
+      "name": "Start of B group second break",
       "start": "9999-12-31 11:15:00",
       "duration_secs": 3
     },
     {
-      "name": "31",
+      "name": "End of A group second break",
       "start": "9999-12-31 11:20:00",
       "duration_secs": 3
     },
     {
-      "name": "32",
+      "name": "Start of C group second break",
       "start": "9999-12-31 11:30:00",
       "duration_secs": 3
     },
     {
-      "name": "33",
+      "name": "End of B group second break",
       "start": "9999-12-31 11:35:00",
       "duration_secs": 3
     },
     {
-      "name": "34",
+      "name": "Start of D group second break",
       "start": "9999-12-31 11:45:00",
       "duration_secs": 3
     },
     {
-      "name": "35",
+      "name": "End of C group second break",
       "start": "9999-12-31 11:50:00",
       "duration_secs": 3
     },
     {
-      "name": "36",
-      "start": "9999-12-31 12:00:00",
-      "duration_secs": 3
-    },
-    {
-      "name": "37",
+      "name": "End of D group second break",
       "start": "9999-12-31 12:05:00",
       "duration_secs": 3
     },
     {
-      "name": "38",
+      "name": "Ten minute end of first shift warning",
       "start": "9999-12-31 14:20:00",
       "duration_secs": 3
     },
     {
-      "name": "39",
+      "name": "Start of second shift",
       "start": "9999-12-31 14:30:00",
       "duration_secs": 3
     },
     {
-      "name": "40",
+      "name": "End of second shift huddle meeting",
       "start": "9999-12-31 14:40:00",
       "duration_secs": 3
     },
     {
-      "name": "41",
+      "name": "Start of A group first break",
       "start": "9999-12-31 16:30:00",
       "duration_secs": 3
     },
     {
-      "name": "42",
+      "name": "Start of B group first break",
       "start": "9999-12-31 16:40:00",
       "duration_secs": 3
     },
     {
-      "name": "43",
+      "name": "End of A group first break",
       "start": "9999-12-31 16:45:00",
       "duration_secs": 3
     },
     {
-      "name": "44",
+      "name": "Start of C group first break",
       "start": "9999-12-31 16:50:00",
       "duration_secs": 3
     },
     {
-      "name": "45",
+      "name": "End of B group first break",
       "start": "9999-12-31 16:55:00",
       "duration_secs": 3
     },
     {
-      "name": "46",
+      "name": "Start of D group first break",
       "start": "9999-12-31 17:00:00",
       "duration_secs": 3
     },
     {
-      "name": "47",
+      "name": "End of C group first break",
       "start": "9999-12-31 17:05:00",
       "duration_secs": 3
     },
     {
-      "name": "48",
-      "start": "9999-12-31 17:10:00",
-      "duration_secs": 3
-    },
-    {
-      "name": "49",
+      "name": "End of D group first break",
       "start": "9999-12-31 17:15:00",
       "duration_secs": 3
     },
     {
-      "name": "50",
+      "name": "Start of A group second break",
       "start": "9999-12-31 19:00:00",
       "duration_secs": 3
     },
     {
-      "name": "51",
+      "name": "Start of B group second break",
       "start": "9999-12-31 19:15:00",
       "duration_secs": 3
     },
     {
-      "name": "52",
+      "name": "End of A group second break",
       "start": "9999-12-31 19:20:00",
       "duration_secs": 3
     },
     {
-      "name": "53",
+      "name": "Start of C group second break",
       "start": "9999-12-31 19:30:00",
       "duration_secs": 3
     },
     {
-      "name": "54",
+      "name": "End of B group second break",
       "start": "9999-12-31 19:35:00",
       "duration_secs": 3
     },
     {
-      "name": "55",
+      "name": "Start of D group second break",
       "start": "9999-12-31 19:45:00",
       "duration_secs": 3
     },
     {
-      "name": "56",
+      "name": "End of C group second break",
       "start": "9999-12-31 19:50:00",
       "duration_secs": 3
     },
     {
-      "name": "57",
-      "start": "9999-12-31 20:00:00",
-      "duration_secs": 3
-    },
-    {
-      "name": "58",
+      "name": "End of D group second break",
       "start": "9999-12-31 20:05:00",
       "duration_secs": 3
     },
     {
-      "name": "59",
+      "name": "Ten minute end of second shift warning",
       "start": "9999-12-31 22:20:00",
       "duration_secs": 3
     },
     {
-      "name": "60",
+      "name": "Start of third shift",
       "start": "9999-12-31 22:30:00",
       "duration_secs": 3
     },
     {
-      "name": "61",
+      "name": "End of third shift huddle meeting",
       "start": "9999-12-31 22:40:00",
       "duration_secs": 3
     }
