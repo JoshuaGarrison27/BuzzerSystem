@@ -5,7 +5,7 @@ This program was designed to be used to power a buzzer system in a facility. Thi
 ## Hardware Requirements
 
 - Raspberry Pi (RPi3 Recommended)
-- [PowerSwitch Tail II](https://www.adafruit.com/product/268)
+- [PowerSwitch Tail II](https://www.adafruit.com/product/268) (The PST has been discontinued. Please check out the IoT Power Relay for an equivalent alternative. The IoT Power Relay has more outlets but otherwise is functionally the same, and at a similar price! Recommend you double check to make sure wiring is still valid)
 - Leads required to connect Rpi and PowerSwitch Tail II together.
 
 ## Software Requirements
